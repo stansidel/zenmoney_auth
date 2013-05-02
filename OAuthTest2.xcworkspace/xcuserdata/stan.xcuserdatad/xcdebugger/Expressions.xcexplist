@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[GlossViewController onOAuthClick:]:GlossViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[self navigationController]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GlossViewController viewController:finishedWithAuth:error:]:GlossViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "auth.tokenURL">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

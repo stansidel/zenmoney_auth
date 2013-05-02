@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE6F2AAC603748C78AB78D50 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1CE95745D7414DACF26130 /* libPods.a */; };
 		F67869F617327A300018ED9A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F67869F517327A300018ED9A /* UIKit.framework */; };
 		F67869F817327A300018ED9A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F67869F717327A300018ED9A /* Foundation.framework */; };
 		F67869FA17327A300018ED9A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F67869F917327A300018ED9A /* CoreGraphics.framework */; };
@@ -18,10 +19,11 @@
 		F6786A0C17327A300018ED9A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6786A0B17327A300018ED9A /* Default-568h@2x.png */; };
 		F6786A0F17327A300018ED9A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6786A0D17327A300018ED9A /* MainStoryboard_iPhone.storyboard */; };
 		F6786A1217327A300018ED9A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6786A1017327A300018ED9A /* MainStoryboard_iPad.storyboard */; };
-		F6786A1517327A300018ED9A /* GlossViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6786A1417327A300018ED9A /* GlossViewController.m */; };
+		F6786A1517327A300018ED9A /* GlossViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6786A1417327A300018ED9A /* GlossViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C1CE95745D7414DACF26130 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F67869F217327A300018ED9A /* OAuthTest2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OAuthTest2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F67869F517327A300018ED9A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F67869F717327A300018ED9A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -39,6 +41,7 @@
 		F6786A1117327A300018ED9A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		F6786A1317327A300018ED9A /* GlossViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlossViewController.h; sourceTree = "<group>"; };
 		F6786A1417327A300018ED9A /* GlossViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlossViewController.m; sourceTree = "<group>"; };
+		FBAA47B5FBE04913B8DDC610 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +52,7 @@
 				F67869F617327A300018ED9A /* UIKit.framework in Frameworks */,
 				F67869F817327A300018ED9A /* Foundation.framework in Frameworks */,
 				F67869FA17327A300018ED9A /* CoreGraphics.framework in Frameworks */,
+				AE6F2AAC603748C78AB78D50 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +65,7 @@
 				F67869FB17327A300018ED9A /* OAuthTest2 */,
 				F67869F417327A300018ED9A /* Frameworks */,
 				F67869F317327A300018ED9A /* Products */,
+				FBAA47B5FBE04913B8DDC610 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +83,7 @@
 				F67869F517327A300018ED9A /* UIKit.framework */,
 				F67869F717327A300018ED9A /* Foundation.framework */,
 				F67869F917327A300018ED9A /* CoreGraphics.framework */,
+				9C1CE95745D7414DACF26130 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -117,9 +123,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6786A1817327A300018ED9A /* Build configuration list for PBXNativeTarget "OAuthTest2" */;
 			buildPhases = (
+				559C95D1AF3645978C2EB33A /* Check Pods Manifest.lock */,
 				F67869EE17327A300018ED9A /* Sources */,
 				F67869EF17327A300018ED9A /* Frameworks */,
 				F67869F017327A300018ED9A /* Resources */,
+				FE51F5250292472080B97D26 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -172,6 +180,37 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		559C95D1AF3645978C2EB33A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+		FE51F5250292472080B97D26 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F67869EE17327A300018ED9A /* Sources */ = {
@@ -274,6 +313,7 @@
 		};
 		F6786A1917327A300018ED9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBAA47B5FBE04913B8DDC610 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OAuthTest2/OAuthTest2-Prefix.pch";
@@ -285,6 +325,7 @@
 		};
 		F6786A1A17327A300018ED9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBAA47B5FBE04913B8DDC610 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OAuthTest2/OAuthTest2-Prefix.pch";
@@ -313,6 +354,7 @@
 				F6786A1A17327A300018ED9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
