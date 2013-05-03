@@ -7,13 +7,13 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "OAuthTest2/GlossViewController.m"
-         timestampString = "389192811.17898"
+         filePath = "Pods/gtm-oauth2/Source/Touch/GTMOAuth2ViewControllerTouch.m"
+         timestampString = "389204597.071347"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "32"
-         endingLineNumber = "32"
-         landmarkName = "-onOAuthClick:"
+         startingLineNumber = "181"
+         endingLineNumber = "181"
+         landmarkName = "-initWithAuthentication:authorizationURL:keychainItemName:delegate:finishedSelector:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -21,12 +21,38 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OAuthTest2/GlossViewController.m"
-         timestampString = "389192811.17898"
+         timestampString = "389209871.974031"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "52"
-         endingLineNumber = "52"
+         startingLineNumber = "121"
+         endingLineNumber = "121"
          landmarkName = "-viewController:finishedWithAuth:error:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "OAuthTest2/GlossViewController.m"
+         timestampString = "389209871.974031"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "123"
+         endingLineNumber = "123"
+         landmarkName = "-viewController:finishedWithAuth:error:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "OAuthTest2/GlossViewController.m"
+         timestampString = "389268789.131194"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "152"
+         endingLineNumber = "152"
+         landmarkName = "-doRequest:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
