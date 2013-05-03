@@ -147,6 +147,44 @@ GTMOAuthAuthentication *_auth;
     // by calling its -canAuthorize method
     [self setAuthentication:auth];
 }
+- (IBAction)doRequest:(void *)sender {
+    [self awakeFromNib];
+    if(![_auth canAuthorize]) {
+        NSLog(@"You are not authorized");
+        return;
+    }
+    
+    NSString *urlStr = @"http://api.zenmoney.ru/v1/account/";
+    
+    NSURL *url = [NSURL URLWithString:urlStr];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [_auth authorizeRequest:request];
+    
+    // Note that for a request with a body, such as a POST or PUT request, the
+    // library will include the body data when signing only if the request has
+    // the proper content type header:
+    //
+    //   [request setValue:@"application/x-www-form-urlencoded"
+    //  forHTTPHeaderField:@"Content-Type"];
+    
+    // Synchronous fetches like this are a really bad idea in Cocoa applications
+    //
+    // For a very easy async alternative, we could use GTMHTTPFetcher
+    NSError *error = nil;
+    NSURLResponse *response = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request
+                                         returningResponse:&response
+                                                     error:&error];
+    if (data) {
+        // API fetch succeeded
+        NSString *str = [[[NSString alloc] initWithData:data
+                                               encoding:NSUTF8StringEncoding] autorelease];
+        NSLog(@"API response: %@", str);
+    } else {
+        // fetch failed
+        NSLog(@"API fetch error: %@", error);
+    }
+}
 
 - (void)viewDidLoad
 {
