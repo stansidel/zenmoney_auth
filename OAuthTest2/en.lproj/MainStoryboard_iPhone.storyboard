@@ -53,28 +53,80 @@
                                     <action selector="doRequest:" destination="2" eventType="touchUpInside" id="CpH-H2-Wgb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vQ-s1-stQ">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Add Operation">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="s10-EH-8KA" kind="push" id="bkS-yg-IHG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zEN-GA-dbc" firstAttribute="top" secondItem="wjK-Pt-XN5" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Aq8-sA-NZh"/>
+                            <constraint firstAttribute="bottom" secondItem="2vQ-s1-stQ" secondAttribute="bottom" constant="130" id="Kzv-4Y-P6f"/>
+                            <constraint firstItem="2vQ-s1-stQ" firstAttribute="centerX" secondItem="wjK-Pt-XN5" secondAttribute="centerX" type="default" id="aRa-EN-Uhe"/>
                             <constraint firstAttribute="bottom" secondItem="zEN-GA-dbc" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="bZ2-4r-CCj"/>
                             <constraint firstItem="wjK-Pt-XN5" firstAttribute="centerX" secondItem="zEN-GA-dbc" secondAttribute="centerX" type="default" id="e9a-CH-HRB"/>
-                            <constraint firstItem="wjK-Pt-XN5" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="ufM-h4-ctr"/>
+                            <constraint firstItem="wjK-Pt-XN5" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="hc8-XO-2nf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CxH-G3-guz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-9" y="-42"/>
+        </scene>
+        <!--Gloss Operations Controller-->
+        <scene sceneID="Kus-VQ-fht">
+            <objects>
+                <viewController id="s10-EH-8KA" customClass="GlossOperationsController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tX5-xp-Ahq">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hlV-w6-Okq">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="273" id="bhw-Re-tMV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="onTouch:" destination="s10-EH-8KA" eventType="touchUpInside" id="Syz-h4-j1Z"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hlV-w6-Okq" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="5Ws-gf-qw9"/>
+                            <constraint firstItem="hlV-w6-Okq" firstAttribute="top" secondItem="tX5-xp-Ahq" secondAttribute="top" constant="98" id="8Qi-JH-oFD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="aM8-vh-FJ3"/>
+                    <connections>
+                        <outlet property="myTextField" destination="hlV-w6-Okq" id="OT7-KZ-Ugq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x6j-ba-jET" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="414" y="-42"/>
         </scene>
     </scenes>
     <classes>
+        <class className="GlossOperationsController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GlossOperationsController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="myTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
         <class className="GlossViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GlossViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doRequest:" candidateClass="void"/>
-                <relationship kind="action" name="onOAuthClick:"/>
-            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
