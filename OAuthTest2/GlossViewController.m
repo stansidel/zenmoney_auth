@@ -179,7 +179,21 @@ GTMOAuthAuthentication *_auth;
         // API fetch succeeded
         NSString *str = [[[NSString alloc] initWithData:data
                                                encoding:NSUTF8StringEncoding] autorelease];
-        NSLog(@"API response: %@", str);
+        
+        // Working with JSON
+        // @see http://www.raywenderlich.com/5492/working-with-json-in-ios-5
+        // @see http://developer.apple.com/library/ios/#documentation/Foundation/Reference/NSJSONSerialization_Class/Reference/Reference.html
+        
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:data //1
+                              
+                              options:kNilOptions
+                              error:&error];
+        
+        NSArray* latestLoans = [json objectForKey:@"id"]; //2
+        
+        NSLog(@"id: %@", json); //3
+        //NSLog(@"API response: %@", str);
     } else {
         // fetch failed
         NSLog(@"API fetch error: %@", error);
