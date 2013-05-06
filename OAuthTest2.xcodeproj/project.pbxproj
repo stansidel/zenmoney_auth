@@ -100,6 +100,7 @@
 		F67869FB17327A300018ED9A /* OAuthTest2 */ = {
 			isa = PBXGroup;
 			children = (
+				F6786AA11736BABA0018ED9A /* Models */,
 				F6786A0417327A300018ED9A /* GlossAppDelegate.h */,
 				F6786A0517327A300018ED9A /* GlossAppDelegate.m */,
 				F6786A0D17327A300018ED9A /* MainStoryboard_iPhone.storyboard */,
@@ -129,6 +130,13 @@
 				F6786A0B17327A300018ED9A /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F6786AA11736BABA0018ED9A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

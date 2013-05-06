@@ -38,11 +38,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    UIDatePicker *datePicker = [[UIDatePicker alloc]init];
+    UIPickerView *pickerView = [[UIPickerView alloc] init];
+//    UIDatePicker *datePicker = [[UIDatePicker alloc]init];
     
-    [datePicker setDate:[NSDate date]];
-    [datePicker addTarget:self action:@selector(updateTextField:) forControlEvents:UIControlEventValueChanged];
-    [self.myTextField setInputView:datePicker];
+//    [datePicker setDate:[NSDate date]];
+//    [datePicker addTarget:self action:@selector(updateTextField:) forControlEvents:UIControlEventValueChanged];
+//    [self.myTextField setInputView:datePicker];
+    //[pickerView setDataSource:<#(id<UIPickerViewDataSource>)#>]
 }
 
 - (void)didReceiveMemoryWarning

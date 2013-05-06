@@ -10,4 +10,6 @@
 
 @interface GlossViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *operationSum;
+
 @end

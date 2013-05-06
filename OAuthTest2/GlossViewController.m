@@ -29,6 +29,72 @@ NSString *kMyConsumerKey = @"gc08df66175eddde146794b633f71f";     // pre-assigne
 NSString *kMyConsumerSecret = @"913e2c4933"; // pre-assigned by service
 NSString *kMyAppName = @"Test1";
 
+- (IBAction)addNewOperation:(id)sender {
+    NSNull *nullValue = [NSNull null];
+    NSDictionary *newDict = @{
+                              @"account_income":@363901,
+                              @"account_outcome":@363901,
+                              @"date":@"2013-05-04",
+                              @"income":@"0.0000",
+                              @"outcome":self.operationSum.text,
+                              @"category":@0,
+                              @"payee":@"1",
+                              @"comment":@"2",
+                              @"instrument_income":@2,
+                              @"instrument_outcome":@2,
+                              @"price":nullValue,
+                              @"static_id":nullValue,
+                              @"changed":@"2013-05-04 11:20:03.51137+04",
+                              @"payback_reminder_marker":nullValue,
+                              @"type_income":@"cash",
+                              @"type_outcome":@"cash",
+                              @"direction":@-1,
+                              @"marker":nullValue,
+                              @"imported":nullValue,
+                              @"inbalance_income":@YES,
+                              @"inbalance_outcome":@YES,
+                              @"bankid_income":nullValue,
+                              @"bankid_outcome":nullValue,
+                              @"hold":nullValue,
+                              @"tag_groups":@[@439685],
+                              @"payee_inflected":@[]
+                              };
+    if(![NSJSONSerialization isValidJSONObject:newDict]) {
+        NSLog(@"Cannot convert to JSON");
+        return;
+    }
+    //NSError *error = nil;
+    NSData *jsonSend = [NSJSONSerialization dataWithJSONObject:newDict options:nil error:nil];
+    NSString *myString = [[NSString alloc] initWithData:jsonSend encoding:NSUTF8StringEncoding];
+    //NSLog(myString);
+    
+    [self awakeFromNib];
+    if(![_auth canAuthorize]) {
+        NSLog(@"You are not authorized");
+        return;
+    }
+    
+    NSString *urlStr = @"http://api.zenmoney.ru/v2/transaction/";
+    
+    NSURL *url = [NSURL URLWithString:urlStr];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"PUT"];
+    [request setHTTPBody:jsonSend];
+    [_auth authorizeRequest:request];
+    
+    NSError *error = nil;
+    NSURLResponse *response = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request
+                                         returningResponse:&response
+                                                     error:&error];
+    
+    // TODO Check for response, error, etc.
+    
+    NSString *str = [[[NSString alloc] initWithData:data
+                                           encoding:NSNonLossyASCIIStringEncoding] autorelease];
+    NSLog(str);
+}
+
 GTMOAuthAuthentication *_auth;
 
 //- (GTMOAuth2Authentication *)zenMoneyAuth {
