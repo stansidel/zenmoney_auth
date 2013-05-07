@@ -90,8 +90,8 @@ NSString *kMyAppName = @"Test1";
     
     // TODO Check for response, error, etc.
     
-    NSString *str = [[[NSString alloc] initWithData:data
-                                           encoding:NSNonLossyASCIIStringEncoding] autorelease];
+    NSString *str = [[NSString alloc] initWithData:data
+                                           encoding:NSNonLossyASCIIStringEncoding];
     NSLog(str);
 }
 
@@ -118,9 +118,9 @@ GTMOAuthAuthentication *_auth;
 
 - (GTMOAuthAuthentication *)myCustomAuth {
     GTMOAuthAuthentication *auth;
-    auth = [[[GTMOAuthAuthentication alloc] initWithSignatureMethod:kGTMOAuthSignatureMethodHMAC_SHA1
+    auth = [[GTMOAuthAuthentication alloc] initWithSignatureMethod:kGTMOAuthSignatureMethodHMAC_SHA1
                                                         consumerKey:kMyConsumerKey
-                                                         privateKey:kMyConsumerSecret] autorelease];
+                                                         privateKey:kMyConsumerSecret];
     
     // setting the service name lets us inspect the auth object later to know
     // what service it is for
@@ -167,7 +167,7 @@ GTMOAuthAuthentication *_auth;
     
     // Display the autentication view
     GTMOAuthViewControllerTouch *viewController;
-    viewController = [[[GTMOAuthViewControllerTouch alloc] initWithScope:nil
+    viewController = [[GTMOAuthViewControllerTouch alloc] initWithScope:nil
                                                                 language:nil
                                                          requestTokenURL:requestURL
                                                        authorizeTokenURL:authorizeURL
@@ -175,7 +175,7 @@ GTMOAuthAuthentication *_auth;
                                                           authentication:auth
                                                           appServiceName:kMyAppName
                                                                 delegate:self
-                                                        finishedSelector:@selector(viewController:finishedWithAuth:error:)] autorelease];
+                                                        finishedSelector:@selector(viewController:finishedWithAuth:error:)];
     
     [[self navigationController] pushViewController:viewController
                                            animated:YES];
@@ -243,8 +243,8 @@ GTMOAuthAuthentication *_auth;
                                                      error:&error];
     if (data) {
         // API fetch succeeded
-        NSString *str = [[[NSString alloc] initWithData:data
-                                               encoding:NSUTF8StringEncoding] autorelease];
+        NSString *str = [[NSString alloc] initWithData:data
+                                               encoding:NSUTF8StringEncoding];
         
         // Working with JSON
         // @see http://www.raywenderlich.com/5492/working-with-json-in-ios-5

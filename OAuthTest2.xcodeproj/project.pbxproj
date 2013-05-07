@@ -19,10 +19,11 @@
 		F6786A0C17327A300018ED9A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6786A0B17327A300018ED9A /* Default-568h@2x.png */; };
 		F6786A0F17327A300018ED9A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6786A0D17327A300018ED9A /* MainStoryboard_iPhone.storyboard */; };
 		F6786A1217327A300018ED9A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6786A1017327A300018ED9A /* MainStoryboard_iPad.storyboard */; };
-		F6786A1517327A300018ED9A /* GlossViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6786A1417327A300018ED9A /* GlossViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F6786A1517327A300018ED9A /* GlossViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6786A1417327A300018ED9A /* GlossViewController.m */; };
 		F6786A97173535490018ED9A /* SimplePickerInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6786A96173535480018ED9A /* SimplePickerInputTableViewCell.m */; };
 		F6786A9A173536110018ED9A /* PickerInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6786A99173536110018ED9A /* PickerInputTableViewCell.m */; };
 		F6786A9D17353A660018ED9A /* GlossOperationsController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6786A9C17353A660018ED9A /* GlossOperationsController.m */; };
+		F6786AA417380BC90018ED9A /* GlossOperationsParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = F6786AA317380BC90018ED9A /* GlossOperationsParameters.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,8 @@
 		F6786A99173536110018ED9A /* PickerInputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerInputTableViewCell.m; sourceTree = "<group>"; };
 		F6786A9B17353A660018ED9A /* GlossOperationsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlossOperationsController.h; sourceTree = "<group>"; };
 		F6786A9C17353A660018ED9A /* GlossOperationsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlossOperationsController.m; sourceTree = "<group>"; };
+		F6786AA217380BC90018ED9A /* GlossOperationsParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlossOperationsParameters.h; sourceTree = "<group>"; };
+		F6786AA317380BC90018ED9A /* GlossOperationsParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlossOperationsParameters.m; sourceTree = "<group>"; };
 		FBAA47B5FBE04913B8DDC610 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -104,6 +107,8 @@
 				F6786A0417327A300018ED9A /* GlossAppDelegate.h */,
 				F6786A0517327A300018ED9A /* GlossAppDelegate.m */,
 				F6786A0D17327A300018ED9A /* MainStoryboard_iPhone.storyboard */,
+				F6786AA217380BC90018ED9A /* GlossOperationsParameters.h */,
+				F6786AA317380BC90018ED9A /* GlossOperationsParameters.m */,
 				F6786A1017327A300018ED9A /* MainStoryboard_iPad.storyboard */,
 				F6786A1317327A300018ED9A /* GlossViewController.h */,
 				F6786A1417327A300018ED9A /* GlossViewController.m */,
@@ -246,6 +251,7 @@
 				F6786A97173535490018ED9A /* SimplePickerInputTableViewCell.m in Sources */,
 				F6786A9A173536110018ED9A /* PickerInputTableViewCell.m in Sources */,
 				F6786A9D17353A660018ED9A /* GlossOperationsController.m in Sources */,
+				F6786AA417380BC90018ED9A /* GlossOperationsParameters.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
