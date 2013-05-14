@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AE6F2AAC603748C78AB78D50 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1CE95745D7414DACF26130 /* libPods.a */; };
+		F642F1DB17415CEB009E9543 /* GlossAccountsView.m in Sources */ = {isa = PBXBuildFile; fileRef = F642F1DA17415CEB009E9543 /* GlossAccountsView.m */; };
 		F67869F617327A300018ED9A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F67869F517327A300018ED9A /* UIKit.framework */; };
 		F67869F817327A300018ED9A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F67869F717327A300018ED9A /* Foundation.framework */; };
 		F67869FA17327A300018ED9A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F67869F917327A300018ED9A /* CoreGraphics.framework */; };
@@ -28,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		9C1CE95745D7414DACF26130 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F642F1D917415CEB009E9543 /* GlossAccountsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlossAccountsView.h; sourceTree = "<group>"; };
+		F642F1DA17415CEB009E9543 /* GlossAccountsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlossAccountsView.m; sourceTree = "<group>"; };
 		F67869F217327A300018ED9A /* OAuthTest2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OAuthTest2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F67869F517327A300018ED9A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F67869F717327A300018ED9A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -107,6 +110,8 @@
 				F6786A0417327A300018ED9A /* GlossAppDelegate.h */,
 				F6786A0517327A300018ED9A /* GlossAppDelegate.m */,
 				F6786A0D17327A300018ED9A /* MainStoryboard_iPhone.storyboard */,
+				F642F1D917415CEB009E9543 /* GlossAccountsView.h */,
+				F642F1DA17415CEB009E9543 /* GlossAccountsView.m */,
 				F6786AA217380BC90018ED9A /* GlossOperationsParameters.h */,
 				F6786AA317380BC90018ED9A /* GlossOperationsParameters.m */,
 				F6786A1017327A300018ED9A /* MainStoryboard_iPad.storyboard */,
@@ -252,6 +257,7 @@
 				F6786A9A173536110018ED9A /* PickerInputTableViewCell.m in Sources */,
 				F6786A9D17353A660018ED9A /* GlossOperationsController.m in Sources */,
 				F6786AA417380BC90018ED9A /* GlossOperationsParameters.m in Sources */,
+				F642F1DB17415CEB009E9543 /* GlossAccountsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
