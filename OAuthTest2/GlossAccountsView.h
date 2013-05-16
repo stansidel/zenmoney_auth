@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@protocol OperationsViewDelegate
--(void)chosenAccount:(NSString*)account;
-@end
+@protocol OperationsViewDelegate;
 
 @interface GlossAccountsView : UITableViewController
 @property NSString* account;
 @property (assign) id<OperationsViewDelegate> delegate;
+@end
+
+@protocol OperationsViewDelegate
+-(void)chosenAccount:(NSString*)account :(GlossAccountsView*)fromView;
 @end

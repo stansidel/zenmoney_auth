@@ -135,7 +135,7 @@
     //[segue.destinationViewController dismissViewControllerAnimated:NO completion:nil];
 }
 
--(void)chosenAccount:(NSString *)account
+-(void)chosenAccount:(NSString *)account:(GlossAccountsView*)fromView
 {
     //NSLog(account);
     [self.account.textLabel setText:account];

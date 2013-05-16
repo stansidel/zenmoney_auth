@@ -258,7 +258,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oXc-7s-sQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620" y="610"/>
+            <point key="canvasLocation" x="608" y="614"/>
         </scene>
     </scenes>
     <classes>
@@ -268,6 +268,7 @@
         <class className="GlossOperationsParameters" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GlossOperationsParameters.h"/>
             <relationships>
+                <relationship kind="action" name="done1:" candidateClass="UIStoryboardSegue"/>
                 <relationship kind="action" name="unwindTest1:" candidateClass="UIStoryboardSegue"/>
                 <relationship kind="outlet" name="account" candidateClass="UITableViewCell"/>
             </relationships>
@@ -275,7 +276,6 @@
         <class className="GlossViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GlossViewController.h"/>
             <relationships>
-                <relationship kind="action" name="addNewOperation:"/>
                 <relationship kind="outlet" name="operationSum" candidateClass="UITextField"/>
             </relationships>
         </class>

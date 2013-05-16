@@ -132,7 +132,7 @@ NSMutableArray* sourceArray;
      */
     account = sourceArray[indexPath.row];
     //[self performSegueWithIdentifier:@"UnwindToOperationSegueID" sender:self];
-    if(self.delegate) [self.delegate chosenAccount:account];
+    if(self.delegate) [self.delegate chosenAccount:account:self];
     // This should be used when not using navigation controller
     //[self dismissViewControllerAnimated:NO completion:nil];
     // This is used with navigation controller
