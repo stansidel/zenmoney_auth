@@ -16,6 +16,8 @@
 
 NSMutableArray* sourceArray;
 
+@synthesize account;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -128,6 +130,13 @@ NSMutableArray* sourceArray;
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    account = sourceArray[indexPath.row];
+    //[self performSegueWithIdentifier:@"UnwindToOperationSegueID" sender:self];
+    if(self.delegate) [self.delegate chosenAccount:account];
+    // This should be used when not using navigation controller
+    //[self dismissViewControllerAnimated:NO completion:nil];
+    // This is used with navigation controller
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

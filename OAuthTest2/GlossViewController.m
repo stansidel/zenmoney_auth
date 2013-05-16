@@ -278,4 +278,9 @@ GTMOAuthAuthentication *_auth;
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)unwindTest:(UIStoryboardSegue *)segue
+{
+    NSLog(@"Unwind");
+}
+
 @end

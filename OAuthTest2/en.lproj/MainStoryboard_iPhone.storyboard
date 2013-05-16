@@ -67,6 +67,9 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jA5-uq-v4H">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="9aN-vc-r7u"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="send"/>
                             </textField>
@@ -92,7 +95,6 @@
                             <constraint firstItem="qra-dV-pKq" firstAttribute="leading" secondItem="jA5-uq-v4H" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="6gv-re-7HB"/>
                             <constraint firstItem="zEN-GA-dbc" firstAttribute="top" secondItem="wjK-Pt-XN5" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Aq8-sA-NZh"/>
                             <constraint firstItem="jA5-uq-v4H" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Dxa-II-j5y"/>
-                            <constraint firstItem="jA5-uq-v4H" firstAttribute="bottom" secondItem="qra-dV-pKq" secondAttribute="bottom" type="default" id="IIK-Lw-LDM"/>
                             <constraint firstAttribute="bottom" secondItem="2vQ-s1-stQ" secondAttribute="bottom" constant="130" id="Kzv-4Y-P6f"/>
                             <constraint firstItem="qra-dV-pKq" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="V9L-u7-Xpb"/>
                             <constraint firstItem="2vQ-s1-stQ" firstAttribute="centerX" secondItem="wjK-Pt-XN5" secondAttribute="centerX" type="default" id="aRa-EN-Uhe"/>
@@ -148,10 +150,10 @@
             </objects>
             <point key="canvasLocation" x="438" y="-42"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Gloss Operations Parameters-->
         <scene sceneID="KVi-v9-ctb">
             <objects>
-                <tableViewController id="uFT-vL-dcq" sceneMemberID="viewController">
+                <tableViewController id="uFT-vL-dcq" customClass="GlossOperationsParameters" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="DlN-NR-6Cr">
                         <rect key="frame" x="0.0" y="0.0" width="226" height="208"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -159,7 +161,7 @@
                         <sections>
                             <tableViewSection id="tyS-1a-4U6">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2Qp-WX-DPd">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" editingAccessoryType="disclosureIndicator" id="2Qp-WX-DPd">
                                         <rect key="frame" x="0.0" y="0.0" width="226" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -198,10 +200,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="hrF-D1-7Xe"/>
+                    <connections>
+                        <outlet property="account" destination="2Qp-WX-DPd" id="B8y-oB-70P"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTP-xe-B8x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="299" y="622"/>
+            <point key="canvasLocation" x="301" y="622"/>
         </scene>
         <!--Gloss Accounts View-->
         <scene sceneID="LXy-jx-INH">
@@ -260,17 +265,25 @@
         <class className="GlossAccountsView" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GlossAccountsView.h"/>
         </class>
+        <class className="GlossOperationsParameters" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GlossOperationsParameters.h"/>
+            <relationships>
+                <relationship kind="action" name="unwindTest1:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="outlet" name="account" candidateClass="UITableViewCell"/>
+            </relationships>
+        </class>
         <class className="GlossViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GlossViewController.h"/>
             <relationships>
                 <relationship kind="action" name="addNewOperation:"/>
-                <relationship kind="action" name="doRequest:" candidateClass="void"/>
-                <relationship kind="action" name="onOAuthClick:"/>
                 <relationship kind="outlet" name="operationSum" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GlossAccountsView.h"
 
-@interface GlossOperationsParameters : UITableViewController
+@interface GlossOperationsParameters : UITableViewController <OperationsViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableViewCell *account;
 
 @end

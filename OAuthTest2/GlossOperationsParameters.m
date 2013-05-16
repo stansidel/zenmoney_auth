@@ -7,6 +7,7 @@
 //
 
 #import "GlossOperationsParameters.h"
+#import "GlossAccountsView.h"
 
 @interface GlossOperationsParameters ()
 
@@ -42,7 +43,7 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+/*- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
@@ -54,9 +55,9 @@
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 0;
-}
+}*/
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+/*- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
@@ -64,6 +65,18 @@
     // Configure the cell...
     
     return cell;
+}*/
+
+- (IBAction)done1:(UIStoryboardSegue *)segue {
+    GlossAccountsView *cc = [segue sourceViewController];
+    NSLog(cc.account);
+}
+
+
+
+- (IBAction)unwindTest1:(UIStoryboardSegue *)segue
+{
+    NSLog(@"Unwind 2");
 }
 
 /*
@@ -107,15 +120,25 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+/*- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
      // ...
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+}*/
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    ((GlossAccountsView*)segue.destinationViewController).delegate = self;
+    //[segue.destinationViewController dismissViewControllerAnimated:NO completion:nil];
+}
+
+-(void)chosenAccount:(NSString *)account
+{
+    //NSLog(account);
+    [self.account.textLabel setText:account];
 }
 
 @end
