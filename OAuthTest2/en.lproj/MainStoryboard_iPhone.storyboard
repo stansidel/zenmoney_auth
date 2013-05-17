@@ -114,10 +114,10 @@
             </objects>
             <point key="canvasLocation" x="-9" y="-42"/>
         </scene>
-        <!--View Controller-->
+        <!--Gloss Operations View Controller-->
         <scene sceneID="yDE-lK-0ul">
             <objects>
-                <viewController id="i7W-0L-TeZ" sceneMemberID="viewController">
+                <viewController id="i7W-0L-TeZ" customClass="GlossOperationsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mH7-VY-ydC">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -127,21 +127,36 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J1N-G8-pw5">
+                            <containerView contentMode="scaleToFill" restorationIdentifier="operation_params" translatesAutoresizingMaskIntoConstraints="NO" id="J1N-G8-pw5">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="uFT-vL-dcq" kind="embed" id="WsP-4u-9CT"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0g-iO-je1">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showAccount:" destination="i7W-0L-TeZ" eventType="touchUpInside" id="zVF-bb-QlE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="J1N-G8-pw5" firstAttribute="top" secondItem="mH7-VY-ydC" secondAttribute="top" constant="114" id="Dcv-MT-CK1"/>
+                            <constraint firstAttribute="bottom" secondItem="J0g-iO-je1" secondAttribute="bottom" constant="33" id="H8t-bp-oeI"/>
+                            <constraint firstItem="J1N-G8-pw5" firstAttribute="centerX" secondItem="J0g-iO-je1" secondAttribute="centerX" type="default" id="ReG-b3-Htp"/>
                             <constraint firstAttribute="bottom" secondItem="J1N-G8-pw5" secondAttribute="bottom" constant="94" id="SSW-IB-BAT"/>
                             <constraint firstItem="J1N-G8-pw5" firstAttribute="leading" secondItem="mH7-VY-ydC" secondAttribute="leading" constant="48" id="a5B-Yi-FWQ"/>
                             <constraint firstItem="5f4-aI-cU8" firstAttribute="top" secondItem="mH7-VY-ydC" secondAttribute="top" constant="20" symbolic="YES" type="default" id="jIj-43-nNb"/>
+                            <constraint firstItem="J1N-G8-pw5" firstAttribute="top" secondItem="mH7-VY-ydC" secondAttribute="top" constant="114" id="ldd-zK-CWg"/>
                             <constraint firstItem="5f4-aI-cU8" firstAttribute="leading" secondItem="mH7-VY-ydC" secondAttribute="leading" constant="107" id="mnx-v9-vHE"/>
-                            <constraint firstAttribute="trailing" secondItem="J1N-G8-pw5" secondAttribute="trailing" constant="46" id="teP-9E-zpe"/>
+                            <constraint firstItem="J0g-iO-je1" firstAttribute="leading" secondItem="mH7-VY-ydC" secondAttribute="leading" constant="125" id="qhB-jf-lAC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="z8P-ru-hM9"/>
@@ -161,7 +176,7 @@
                         <sections>
                             <tableViewSection id="tyS-1a-4U6">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" editingAccessoryType="disclosureIndicator" id="2Qp-WX-DPd">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Account" editingAccessoryType="disclosureIndicator" id="2Qp-WX-DPd">
                                         <rect key="frame" x="0.0" y="0.0" width="226" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -273,9 +288,19 @@
                 <relationship kind="outlet" name="account" candidateClass="UITableViewCell"/>
             </relationships>
         </class>
+        <class className="GlossOperationsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GlossOperationsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showAccount:"/>
+            </relationships>
+        </class>
         <class className="GlossViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GlossViewController.h"/>
             <relationships>
+                <relationship kind="action" name="addNewOperation:"/>
+                <relationship kind="action" name="doRequest:" candidateClass="void"/>
+                <relationship kind="action" name="onOAuthClick:"/>
+                <relationship kind="action" name="unwindTest:" candidateClass="UIStoryboardSegue"/>
                 <relationship kind="outlet" name="operationSum" candidateClass="UITextField"/>
             </relationships>
         </class>
